@@ -4,11 +4,11 @@ import { DummyDoctor1 } from '../../assets'
 import { Header, ListDoctor } from '../../components'
 import { colors } from '../../utils'
 
-const ChooseDoctor = ({type}) => {
+const ChooseDoctor = ({navigation}) => {
     return (
         <View style={styles.page}>
-            <Header type ="dark" title="Pilih Dokter "/>
-            <ListDoctor type ="next" profile={DummyDoctor1} name={"Alexa"} desc={"Women"}/>
+            <Header type ="dark" title="Pilih Dokter " onPress={()=> navigation.goBack()}/>
+            <ListDoctor type ="next" profile={DummyDoctor1} name={"Alexa"} desc={"Women"} Onpress={() => navigation.navigate('Chatting')}/>
             <ListDoctor type ="next" profile={DummyDoctor1} name={"Alexa"} desc={"Women"}/>
             <ListDoctor type ="next" profile={DummyDoctor1} name={"Alexa"} desc={"Women"}/>
             <ListDoctor type ="next" profile={DummyDoctor1} name={"Alexa"} desc={"Women"}/>

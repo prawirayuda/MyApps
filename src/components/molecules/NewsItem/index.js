@@ -1,8 +1,7 @@
-import { BackgroundColor, blue } from 'chalk'
 import React from 'react'
-import { StyleSheet, Text, View,Image } from 'react-native'
+import { Image, StyleSheet, Text, View } from 'react-native'
 import { DummyNews1 } from '../../../assets/dummy'
-import {colors, fonts} from '../../../utils'
+import { colors, fonts } from '../../../utils'
 
 const NewsItem = () => {
     return (

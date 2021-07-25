@@ -8,9 +8,9 @@ import DummyNews3 from './news-3.png'
 import hospital1 from './hospital1.png'
 import hospital2 from './hospital2.png'
 import DummyDoctor4 from './image-4.png'
-import { DummyDoctor5 } from './image5.png'
-import { DummyDoctor6 } from './image6.png'
-import { DummyDoctor7 } from './image7.png'
+import  DummyDoctor5  from './image5.png'
+import  DummyDoctor6  from './image6.png'
+import  DummyDoctor7  from './image7.png'
 
 export {
     DummyUser,

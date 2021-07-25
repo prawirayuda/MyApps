@@ -7,5 +7,16 @@ import Doctor from "./Doctor";
 import Messages from "./Messages";
 import Hospitals from "./Hospitals";
 import ChooseDoctor from "./ChooseDoctor";
+import Chatting from "./Chatting"
 
-export {Splash,ChooseDoctor,GetStarted, Register, Login, UploadPhoto, Doctor, Messages, Hospitals};
+export {
+    Splash,
+    ChooseDoctor,
+    GetStarted, 
+    Register, 
+    Login, 
+    UploadPhoto, 
+    Doctor, 
+    Messages, 
+    Hospitals, 
+    Chatting};

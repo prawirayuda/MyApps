@@ -32,7 +32,7 @@ const Messages = () => {
                 {
                     doctors.map(doctor => {
                         return <ListDoctor 
-                                key={doctor.key}
+                                id={doctor.id}
                                 profile={doctor.profile} 
                                 name={doctor.name} 
                                 desc={doctor.desc}/>

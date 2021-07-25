@@ -1,7 +1,5 @@
 import React from 'react'
 import { Image, StyleSheet, Text, View } from 'react-native'
-import { color } from 'react-native-reanimated'
-import { hospital1 } from '../../../assets'
 import { colors, fonts } from '../../../utils'
 
 const ListHospitals = ({type, name, address, pic}) => {
