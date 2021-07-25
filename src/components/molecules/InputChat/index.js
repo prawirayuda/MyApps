@@ -1,6 +1,6 @@
 import React from 'react'
-import { StyleSheet, Text, TextInput, View } from 'react-native'
-import  colors  from '../../../utils'
+import { StyleSheet, TextInput, View } from 'react-native'
+import { colors } from '../../../utils'
 
 
 const InputChat = () => {
@@ -15,7 +15,7 @@ export default InputChat
 
 const styles = StyleSheet.create({
     input:{
-        // backgroundColor: colors.pudar,
+        backgroundColor: colors.pudar,
         padding: 14,
         borderRadius:10
     },
