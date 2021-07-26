@@ -7,11 +7,13 @@ const mainColors ={
     grey1:'#7D8797',
     grey2: '#e9e9e9',
     grey3: '#edeef0',
+    blue1: '#0066cb',
 }
 
 export const colors ={
     primary : mainColors.green1,
     secondary: mainColors.dark1,
+    tertiary:mainColors.blue1,
     white:'white',
     black:'black',
     pudar:mainColors.grey3,
