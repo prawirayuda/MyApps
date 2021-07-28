@@ -4,7 +4,7 @@ import { IconEditProfile, IconHelp, IconLanguage, IconNext, IconRate } from '../
 import { colors, fonts } from '../../../utils'
 
 
-const List = ({profile,name,desc,type,Onpress, icon}) => {
+const List = ({profile,name,desc,type,onPress, icon}) => {
     const Icon =() => {
     if ( icon === 'edit-profile') {
         return <IconEditProfile/>
@@ -22,7 +22,7 @@ const List = ({profile,name,desc,type,Onpress, icon}) => {
     }
 
     return (
-        <TouchableOpacity style={styles.container} onPress={Onpress}>
+        <TouchableOpacity style={styles.container} onPress={onPress}>
             {icon ? <Icon/> : <Image source={profile} style={styles.avatar}/> }
 
             <View style={styles.content}>

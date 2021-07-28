@@ -1,19 +1,28 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, View } from 'react-native'
 import { colors } from '../../utils'
-import {Gap, Header, List, Profile} from './../../components'
+import { Gap, Header, List, Profile } from './../../components'
 
-const UserProfile = () => {
+const UserProfile = ({navigation}) => {
     return (
         <View style={styles.page}>
-            <Header title= "Profile"/>
+            <Header 
+            title= "Profile" 
+            onPress={() => navigation.goBack()}/>
             <Gap height={10}/>
             <Profile/>
             <Gap height={14}/>
-            <List name = "Edit Profile" desc="Last Update Today" type="next" icon="edit-profile"/>
-            <List name = "Language" desc="Last Update Today" type="next" icon="language"/>
-            <List name = "Rate" desc="Last Update Today" type="next" icon="rate"/>
+            <List 
+            name = "Edit Profile" 
+            desc="Last Update Today" 
+            type="next" 
+            icon="edit-profile"
+            onPress={() => navigation.navigate('UpdateProfile')}
+            />
+            <List name = "Language" desc="Indonesia" type="next" icon="language" />
+            <List name = "Rate" desc="Penilaian untuk dokter Ajo" type="next" icon="rate"/>
             <List name = "Help" desc="Last Update Today" type="next" icon="help"/>
+
         </View>
     )
 }

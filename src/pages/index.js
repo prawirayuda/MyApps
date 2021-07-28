@@ -9,9 +9,13 @@ import Hospitals from "./Hospitals";
 import ChooseDoctor from "./ChooseDoctor";
 import Chatting from "./Chatting"
 import UserProfile from "./UserProfile";
+import UpdateProfile from "./UpdateProfile";
+import EditProfile from "./EditProfile";
+
 
 export {
     Splash,
+    EditProfile,
     UserProfile,
     ChooseDoctor,
     GetStarted, 
@@ -21,4 +25,6 @@ export {
     Doctor, 
     Messages, 
     Hospitals, 
-    Chatting};
+    Chatting,
+    UpdateProfile,
+};

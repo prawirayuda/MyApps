@@ -1,6 +1,7 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import { GetStarted, Login, Register, Splash, UploadPhoto, Doctor, Messages, Hospitals, ChooseDoctor, Chatting,UserProfile } from '../pages';
+import { GetStarted, Login, Register, Splash, UploadPhoto, Doctor, Messages, 
+        Hospitals, ChooseDoctor, Chatting,UserProfile,UpdateProfile,EditProfile } from '../pages';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { BottomNavigator } from '../components';
 
@@ -56,8 +57,16 @@ const Router = () => {
             <Stack.Screen 
                 name="UserProfile" 
                 component={UserProfile} 
-                options={{headerShown:false}}/>         
-            </Stack.Navigator>
+                options={{headerShown:false}}/>
+            <Stack.Screen 
+                name="UpdateProfile" 
+                component={UpdateProfile} 
+                options={{headerShown:false}}/>             
+            <Stack.Screen 
+                name="EditProfile" 
+                component={EditProfile} 
+                options={{headerShown:false}}/>             
+        </Stack.Navigator>
         
     );
 };

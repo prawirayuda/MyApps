@@ -8,8 +8,8 @@ const ChooseDoctor = ({navigation}) => {
     return (
         <View style={styles.page}>
             <Header type ="dark" title="Pilih Dokter " onPress={()=> navigation.goBack()}/>
-            <List type ="next" profile={DummyDoctor1} name={"Alexa"} desc={"Women"} Onpress={() => navigation.navigate('Chatting')}/>
-            <List type ="next" profile={DummyDoctor1} name={"Alexa"} desc={"Women"}/>
+            <List type ="next" profile={DummyDoctor1} name={"Alexa"} desc={"Women"} onPress={() => navigation.navigate('Chatting')}/>
+            <List type ="next" profile={DummyDoctor1} name={"Yuda"} desc={"Man"} onPress={() => navigation.navigate('Chatting')} /> 
             <List type ="next" profile={DummyDoctor1} name={"Alexa"} desc={"Women"}/>
             <List type ="next" profile={DummyDoctor1} name={"Alexa"} desc={"Women"}/>
             <List type ="next" profile={DummyDoctor1} name={"Alexa"} desc={"Women"}/>
