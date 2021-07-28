@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import { DummyDoctor1, DummyDoctor2, DummyDoctor3 } from '../../assets'
 import { colors, fonts } from '../../utils'
-import {ListDoctor} from '../../components'
+import {List} from '../../components'
 
 const Messages = () => {
     const [doctors]= useState([
@@ -19,7 +19,7 @@ const Messages = () => {
             desc:'syayalalala......'
         },
         {
-            id:1,
+            id:3,
             profile: DummyDoctor1,
             name:'Sander',
             desc:'cuucucucuucucuc......'
@@ -31,8 +31,8 @@ const Messages = () => {
                 <Text style={styles.title}> Messages</Text>
                 {
                     doctors.map(doctor => {
-                        return <ListDoctor 
-                                id={doctor.id}
+                        return <List 
+                                key={doctor.id}
                                 profile={doctor.profile} 
                                 name={doctor.name} 
                                 desc={doctor.desc}/>

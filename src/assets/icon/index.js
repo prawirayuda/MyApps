@@ -12,9 +12,17 @@ import IconStar from './star.svg'
 import IconNext from './next.svg'
 import SendIconDark from './Icon-Dark.svg'
 import SendIconLight from './Icon-Light.svg'
+import IconEditProfile from './Profile.svg'
+import IconRate from './Rate.svg'
+import IconHelp from './Help.svg'
+import IconLanguage from './Language.svg'
 
 export {
     IconBackDark,
+    IconRate,
+    IconHelp,
+    IconLanguage,
+    IconEditProfile,
     IconAddPhoto, 
     IconRemovePhoto, 
     IconDoctor,
