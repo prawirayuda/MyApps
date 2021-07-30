@@ -10,12 +10,12 @@ import ChooseDoctor from "./ChooseDoctor";
 import Chatting from "./Chatting"
 import UserProfile from "./UserProfile";
 import UpdateProfile from "./UpdateProfile";
-import EditProfile from "./EditProfile";
+import DoctorProfile from "./DoctorProfile";
 
 
 export {
     Splash,
-    EditProfile,
+    DoctorProfile,
     UserProfile,
     ChooseDoctor,
     GetStarted, 

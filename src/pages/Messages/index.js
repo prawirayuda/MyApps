@@ -4,7 +4,7 @@ import { DummyDoctor1, DummyDoctor2, DummyDoctor3 } from '../../assets'
 import { colors, fonts } from '../../utils'
 import {List} from '../../components'
 
-const Messages = () => {
+const Messages = ({navigation}) => {
     const [doctors]= useState([
         {
             id:1,
@@ -35,7 +35,9 @@ const Messages = () => {
                                 key={doctor.id}
                                 profile={doctor.profile} 
                                 name={doctor.name} 
-                                desc={doctor.desc}/>
+                                desc={doctor.desc}
+                                onPress={() => navigation.navigate('Chatting')}/>
+
                     })
                 }
 

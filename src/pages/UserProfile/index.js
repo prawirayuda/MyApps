@@ -10,7 +10,7 @@ const UserProfile = ({navigation}) => {
             title= "Profile" 
             onPress={() => navigation.goBack()}/>
             <Gap height={10}/>
-            <Profile/>
+            <Profile name="ghani" desc="yutuber"/>
             <Gap height={14}/>
             <List 
             name = "Edit Profile" 

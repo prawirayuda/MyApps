@@ -4,12 +4,12 @@ import { DummyDoctor6 } from '../../../assets'
 import { colors, fonts } from '../../../utils'
 import { Button } from '../../atoms'
 
-const DarkProfile = () => {
+const DarkProfile = ({onPress}) => {
     return (
         <View style={styles.container}>
-            <Button type ="icon-only" icon="back-light"/>
+            <Button type ="icon-only" icon="back-light" onPress={onPress}/>
             <View style={styles.content}>
-                <Text style={styles.name}>Nairabonaa</Text>
+                <Text style={styles.name}>Alexa</Text>
                 <Text style={styles.desc}>Dokter Hati</Text>
             </View>
             <Image source={DummyDoctor6} style={styles.avatar} />

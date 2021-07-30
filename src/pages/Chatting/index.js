@@ -8,7 +8,7 @@ const Chatting = ({navigation}) => {
         <View style={styles.page}>
             <Header 
             title="Naina Sosan" 
-            type ="dark-profile" 
+            type ="dark-profile"
             onPress={() => navigation.goBack()}/>
             <View style={styles.content}>
                 <Text style={styles.chatDate}>Senin, 25 Juli 2021</Text>
