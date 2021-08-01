@@ -10,10 +10,12 @@ import ChatItem from "./ChatItem";
 import InputChat from "./InputChat";
 import Profile from "./Profile";
 import ProfileItem from "./ProfileItem";
+import Loading from "./Loading";
 
 
 export {
     Header,
+    Loading,
     ProfileItem,
     Profile,
     InputChat,

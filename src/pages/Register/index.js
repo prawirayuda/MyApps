@@ -1,10 +1,11 @@
 import React from 'react'
 import { useState } from 'react'
 import { ScrollView, StyleSheet, View } from 'react-native'
-import { Button, Gap, Header, Input } from '../../components'
+import { Button, Gap, Header, Input, Loading } from '../../components'
 import { Fire } from '../../config'
 import { UseForm } from '../../utils'
 import { colors } from '../../utils/colors'
+import { showMessage, hideMessage } from "react-native-flash-message";
 
 const Register = ({navigation}) => {
     // const [fullName, setFullName] =useState('')
@@ -19,15 +20,34 @@ const Register = ({navigation}) => {
         password:'',
     })
 
+    const [loading,setLoading] = useState(false)
     const onContinue =() => {
         console.log (form)
-        Fire.auth().createUserWithEmailAndPassword(form.email, form.password)
+        setLoading(true)
+        Fire.auth()
+        .createUserWithEmailAndPassword(form.email, form.password)
         .then((success) => {
-            console.log('register success', success)
+            setLoading(false)
+            setForm('reset')
+            const data ={
+                fullName:form.fullName,
+                profession:form.profession,
+                email:form.email
+            }
+            Fire.database().ref('users/' + success.user.uid +'/')
+            .set(data)
         })
 
         .catch(error => {
             const errorMessage = error.message
+            setLoading(false)
+            
+            showMessage({
+                message: errorMessage,
+                type: 'default',
+                backgroundColor:'red',
+                color: 'white'
+              });
             console.log('error Register : ' , errorMessage)
         });
 
@@ -35,6 +55,7 @@ const Register = ({navigation}) => {
     }
 
     return (
+        <>
         <View style={styles.page}>
             <Header onPress={()=> navigation.goBack()} title ="Daftar Akun"/>
             <View style={styles.content}>
@@ -64,6 +85,8 @@ const Register = ({navigation}) => {
             </ScrollView>
             </View>
         </View>
+        {loading && <Loading/>}
+        </>
     )
 }
 

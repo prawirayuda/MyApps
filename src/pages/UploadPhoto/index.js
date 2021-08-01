@@ -1,24 +1,69 @@
 import React from 'react'
-import { StyleSheet, Text, View, Image } from 'react-native'
-import { IconAddPhoto, INulPhoto } from '../../assets';
+import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
+import { useState } from 'react/cjs/react.development';
+import { IconAddPhoto, IconRemovePhoto, INulPhoto } from '../../assets';
 import {Button, Gap, Header, Link} from '../../components';
 import { colors, fonts } from '../../utils';
+import {launchCamera, launchImageLibrary} from 'react-native-image-picker';
+
 
 const UploadPhoto = ({navigation}) => {
+    const options = {
+        storageOption:{
+            path: 'images',
+            mediaType:'photo'
+        },
+        includeBase64:true,
+    } 
+
+const [hasPhoto, sethasPhoto] =useState (false)
+const [photo,setPhoto] = useState(INulPhoto)
+
+// const getImage =() => {
+//     launchImageLibrary(options, response => {
+//         const source = {uri: response.uri}
+//         setPhoto(source)
+//         sethasPhoto(true)
+//         console.log('responnya adalah: ', response.error)
+//     })
+// }
+const getImage =() => {
+    launchCamera(options, response => {
+        console.log('responsenya : ', response)
+        if (response.didCancel){
+            console.log('User gk jadi ambil poto')
+        } else if (response.error){
+            console.log('eror picker : ' ,response.error)
+        } else if (response.customButtom){
+            console.log('user tap buttom : ', response.customButtom)
+        } else {
+
+            const source = {uri: response.uri}
+            setPhoto(source)
+            sethasPhoto(true)
+        }
+        // console.log('responnya adalah: ', response.errorCode)
+    })
+}
+
+
+
     return (
         <View style={styles.page}>
             <Header title="Upload Photo"/>
             <View style={styles.content}> 
                 <View style={styles.profile}>
-                    <View style ={styles.avatarWrapper}>
-                        <Image source={INulPhoto} style= {styles.avatar}/>
-                        <IconAddPhoto style={styles.addPhoto}/>                
-                    </View>
+                    <TouchableOpacity style ={styles.avatarWrapper} onPress={getImage}>
+                        <Image source={photo} style= {styles.avatar}/>
+                        {hasPhoto && <IconRemovePhoto style={styles.addPhoto}/>}
+                        {!hasPhoto && <IconAddPhoto style={styles.addPhoto}/> }
+                            
+                    </TouchableOpacity>
                     <Text style={styles.name}>Muhammad Ali Ghani</Text>
                     <Text style={styles.profesi}> Athlete PB</Text>                
                 </View>   
                 <View>
-                    <Button title="Upload & Continue" onPress={() => navigation.replace('MainApp')}/>
+                    <Button disable={!hasPhoto} title="Upload & Continue" onPress={() => navigation.replace('MainApp')}/>
                     <Gap height={30}/>
                     <Link title="skip for this" align="center" size={16} onPress={() => navigation.replace('MainApp')}/>
                 </View>
@@ -38,7 +83,8 @@ const styles = StyleSheet.create({
     },
     avatar: {
         width :110,
-        height:110
+        height:110,
+        borderRadius:1100/2
     },
     avatarWrapper: {
         width:130,
